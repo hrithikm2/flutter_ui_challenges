@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "335033020929",
+    "project_id": "bloc-firebase-auth-all",
+    "storage_bucket": "bloc-firebase-auth-all.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:335033020929:android:8da0a955fa9c72da454600",
+        "android_client_info": {
+          "package_name": "com.example.verygoodcore.draggable"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "335033020929-hk1q2ad53ikopa0m50h2u209832o2e1p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBU95haY_atf2w9_q7jMlf2UYr4xmn12Tw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "335033020929-hk1q2ad53ikopa0m50h2u209832o2e1p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
