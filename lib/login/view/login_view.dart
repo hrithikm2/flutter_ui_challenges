@@ -5,6 +5,7 @@ import 'package:draggable/login/bloc/login_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:velocity_x/velocity_x.dart';
 
 class LoginView extends StatelessWidget {
   const LoginView({super.key});
@@ -32,7 +33,7 @@ class LoginView extends StatelessWidget {
                       ClipPath(
                         clipper: RoundedDiagonalPathClipper(),
                         child: Container(
-                          margin: const EdgeInsets.all(10),
+                          //margin: const EdgeInsets.all(10),
                           height: H(context) * 45,
                           decoration: const BoxDecoration(
                             borderRadius: BorderRadius.all(Radius.circular(50)),
@@ -44,13 +45,37 @@ class LoginView extends StatelessWidget {
                               crossAxisAlignment: CrossAxisAlignment.stretch,
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
+                                mediumVerticalSpacer(context),
                                 EcommerceTextField(
+                                  hint: 'Email address',
+                                  prefixIcon: const Icon(
+                                    Icons.email,
+                                    color: Color(0xff0099fa),
+                                  ),
                                   controller: context
                                       .read<LoginCubit>()
                                       .emailController,
                                 ),
                                 smallVerticalSpacer(context),
-                                const TextField(),
+                                EcommerceTextField(
+                                  hint: 'Password',
+                                  prefixIcon: const Icon(
+                                    Icons.lock,
+                                    color: Color(0xff0099fa),
+                                  ),
+                                  controller: context
+                                      .read<LoginCubit>()
+                                      .passwordController,
+                                ),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.end,
+                                  children: [
+                                    TextButton(
+                                      onPressed: () {},
+                                      child: 'Forgot Password'.text.make(),
+                                    )
+                                  ],
+                                )
                               ],
                             ),
                           ),
@@ -68,20 +93,30 @@ class LoginView extends StatelessWidget {
                           ),
                         ),
                       ),
-                      Align(
-                        alignment: Alignment.bottomCenter,
-                        child: CircleAvatar(
-                          backgroundColor: const Color(0xff008aec),
-                          radius: H(context) * 5,
-                          child: Icon(
-                            Icons.person,
-                            size: H(context) * 3,
-                            color: const Color(0xffd4c3ec),
+                      SizedBox(
+                        height: H(context) * 48.3,
+                        child: Align(
+                          alignment: Alignment.bottomCenter,
+                          child: MaterialButton(
+                            onPressed: () {},
+                            color: const Color(0xff0099fa),
+                            shape: const StadiumBorder(),
+                            child: 'Login'
+                                .text
+                                .color(const Color(0xffb4e1fe))
+                                .lg
+                                .make(),
                           ),
                         ),
                       )
                     ],
                   ),
+                  const Spacer(),
+                  TextButton(
+                    onPressed: () {},
+                    child:
+                        'Sign up'.text.color(const Color(0xff0099fa)).xl.make(),
+                  )
                 ],
               ),
             ),
